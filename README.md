@@ -8,12 +8,12 @@
 
 ## UK National Rail Live Departure Boards JSON proxy
 
-Huxley is a [CORS](http://enable-cors.org/) enabled JSON proxy for the UK National Rail Enquires Live Departure Board [SOAP](http://harmful.cat-v.org/software/xml/soap/simple) [API](http://www.nationalrail.co.uk/46391.aspx) (Darwin). 
+Huxley is a [CORS](http://enable-cors.org/) enabled JSON proxy for the UK National Rail Enquires Live Departure Board [SOAP](http://harmful.cat-v.org/software/xml/soap/simple) [API](http://www.nationalrail.co.uk/46391.aspx) (Darwin).
 It aims to make the API available to many more tools on multiple platforms. You no longer need .NET on Windows to use Darwin.
 
 [![Tech arch](https://raw.githubusercontent.com/jpsingleton/Huxley/master/HuxleyTechArch.png)](https://huxley.unop.uk)
 
-If you want to be informed of updates when they are released then watch the project on GitHub and **follow [me on Twitter](https://twitter.com/shutdownscanner)**. You can also read about this and other projects on [my blog](https://unop.uk/). 
+If you want to be informed of updates when they are released then watch the project on GitHub and **follow [me on Twitter](https://twitter.com/shutdownscanner)**. You can also read about this and other projects on [my blog](https://unop.uk/).
 If you are interested in cross-platform .NET then you may enjoy reading [my new book, "ASP.NET Core 1.0 High Performance"](https://unop.uk/book/).
 
 ---
@@ -25,10 +25,6 @@ Huxley also has a built in CRS code lookup API so you can search for station nam
 In addition it has a function for calculating delays which allows you to build useful IoT devices like this [LED strip delay indicator](https://unop.uk/train-disruption-indicator-with-a-blinky-tape-rgb-led-strip-and-raspberry-pi/). You can specify specific trains and it even knows about London Terminals.
 
 [![Train Disruption Indicator](https://unop.uk/wp-content/uploads/2015/05/trains.jpg "Train Disruption Indicator")](https://unop.uk/train-disruption-indicator-with-a-blinky-tape-rgb-led-strip-and-raspberry-pi/)
-
-You can also use it to build mobile web apps such as [InstaBail](https://instabail.uk/), which generates excuses based on real transport disruptions.
-
-[![InstaBail](https://unop.uk/wp-content/uploads/2015/07/ios2.png "InstaBail")](https://instabail.uk/)
 
 ## Demo
 There is an example deployment set up [here](https://huxley.apphb.com/).
@@ -59,13 +55,13 @@ There is an additional Python (v2) [example for a Raspberry Pi and Blinky Tape R
 
 ## Access Token
 
-You will need to add your access token to the URL. You can register to obtain one [here](https://realtime.nationalrail.co.uk/OpenLDBWSRegistration/Registration) 
-(or [here](http://openldbsv.nationalrail.co.uk/self-signup/register) for the staff version). 
+You will need to add your access token to the URL. You can register to obtain one [here](https://realtime.nationalrail.co.uk/OpenLDBWSRegistration/Registration)
+(or [here](http://openldbsv.nationalrail.co.uk/self-signup/register) for the staff version).
 Append the `accessToken={Your GUID token}` parameter to the query string for every request.
 
 There is optional support for configuring the access token server side. So you don't need to worry about revealing it.
 
-You can set `DarwinAccessToken` to your NRE access token. If you leave `ClientAccessToken` as an empty GUID then no token is required in the Huxley URL. If you set `ClientAccessToken` to a random GUID and it matches the token in the URL then the `DarwinAccessToken` will be used instead in the SOAP call. Otherwise the URL token is passed straight through. Look in the `Web.config` file for more details. 
+You can set `DarwinAccessToken` to your NRE access token. If you leave `ClientAccessToken` as an empty GUID then no token is required in the Huxley URL. If you set `ClientAccessToken` to a random GUID and it matches the token in the URL then the `DarwinAccessToken` will be used instead in the SOAP call. Otherwise the URL token is passed straight through. Look in the `Web.config` file for more details.
 You can do the same with `DarwinStaffAccessToken` if you are using the staff version.
 
 **N.B.** You should set up these tokens in your deployment platform and not in your source code repository. You'll notice that the values are empty GUIDs by default. The example token used above will only work on the demo server and not directly against the SOAP API.
@@ -137,7 +133,7 @@ Filter stations can be a comma separated list. Filter type and number of rows ar
 
 [`/service/{Service ID}?accessToken={Your GUID token}`](https://huxley.apphb.com/service/Z/zlpIG8jJacKayAnOXODw==?accessToken=)
 
-The service ID can be found for each service inside the departures and arrivals response. 
+The service ID can be found for each service inside the departures and arrivals response.
 Huxley also returns the ID in URL percent encoded, GUID and [URL safe Base64](https://en.wikipedia.org/wiki/Base64#URL_applications) representations (for non-staff boards).
 Likewise, the service endpoint will accept [URL safe Base64](https://tools.ietf.org/html/rfc4648#section-5) service IDs, from various different encoders.
 
@@ -245,6 +241,6 @@ Made by [James Singleton](https://unop.uk)
 
 This program is licensed under the terms of the GNU Affero General Public License. This means that you need to share any changes (even if only running on a public server).
 
-If you would like another license (such as a commercial license with an invoice) then this can be provided. Please get in touch (send an email to jpsingleton at gmail dot com). 
+If you would like another license (such as a commercial license with an invoice) then this can be provided. Please get in touch (send an email to jpsingleton at gmail dot com).
 
 Contains public sector information licensed under the Open Government Licence v3.0.
